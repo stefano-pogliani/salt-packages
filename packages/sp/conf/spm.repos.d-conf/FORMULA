@@ -1,0 +1,13 @@
+name: sp-spm-repo-conf
+version: 201608
+release: 1
+
+os: Fedora
+os_family: RedHat
+
+top_level_dir: spm.repos.d/
+
+summary: Configure SPM repositories for a salt-master.
+description: >
+  Configures the following SPM repositories:
+    * Internal repository.

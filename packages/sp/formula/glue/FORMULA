@@ -1,0 +1,12 @@
+name: sp-glue
+version: 201608
+release: 1
+
+os: Fedora, Debian
+os_family: RedHat, Debian
+
+top_level_dir: sp/
+
+summary: Glue states and pillar files.
+description: >
+  Package for salt top level states and pillar data.

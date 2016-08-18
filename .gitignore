@@ -1,0 +1,9 @@
+build/cache/*
+build/tmp/*
+out/*
+
+**/Dockerfile-kitchen*
+**/.kitchen/**
+
+*.swp
+build/spm.log

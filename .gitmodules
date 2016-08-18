@@ -1,0 +1,3 @@
+[submodule "packages/community/users"]
+	path = packages/community/users
+	url = https://github.com/saltstack-formulas/users-formula.git

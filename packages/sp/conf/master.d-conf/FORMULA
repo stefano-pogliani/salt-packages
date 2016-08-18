@@ -1,0 +1,13 @@
+name: sp-master-conf
+version: 201608
+release: 1
+
+os: Fedora, Debian
+os_family: RedHat, Debian
+
+top_level_dir: master.d/
+
+summary: Configuration files for the salt-master.
+description: >
+  Configures a salt-master with the following:
+    * Use SPM state files.

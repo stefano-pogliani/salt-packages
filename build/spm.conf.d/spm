@@ -1,0 +1,10 @@
+log_file: /tmp/spm/master.log
+spm_logfile: build/spm.log
+
+spm_build_dir: out
+spm_cache_dir: build/cache
+spm_db: build/cache/packages.db
+
+formula_path: build/tmp/salt
+pillar_path:  build/tmp/pillar
+reactor_path: build/tmp/reactor
