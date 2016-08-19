@@ -1,0 +1,40 @@
+---
+provisioner:
+  name: salt_solo
+  salt_bootstrap_options: '-M -X stable 2016.3'
+  salt_pillar_root: '/srv/salt/sp/pillar/'
+
+  formula: sp
+  pillars:
+    top.sls:
+      base:
+        '*':
+          - sp.essential.users.stefano
+          - sp.test.users.stefano
+  pillars-from-files:
+    sp/test/users/stefano.sls: test/integration/fixtures/pillar/users/stefano.sls
+    # Hack to inject gpgkeys.
+    ../../../../etc/salt/gpgkeys/random_seed: test/integration/fixtures/gpgkeys/random_seed
+    ../../../../etc/salt/gpgkeys/pubring.gpg: test/integration/fixtures/gpgkeys/pubring.gpg
+    ../../../../etc/salt/gpgkeys/secring.gpg: test/integration/fixtures/gpgkeys/secring.gpg
+    ../../../../etc/salt/gpgkeys/trustdb.gpg: test/integration/fixtures/gpgkeys/trustdb.gpg
+
+  state_top:
+    base:
+      '*':
+        - sp.essential.users
+
+  dependencies:
+    - name: users
+      path: "<%= ENV['SALT_TOOLS_PACKAGES'] %>/packages/community/users"
+
+
+platforms:
+  - name: debian-8
+
+
+suites:
+  - name: docker
+    driver:
+      name: docker
+      use_sudo: true

@@ -1,6 +1,9 @@
-.PHONY: build build-all clean clean-all
+.PHONY: build build-all clean clean-all kitchen test
 .DEFAULT_GOAL := build-all
 
+# Kitchen related options.
+ACTION ?= converge
+SALTIFY_PATH ?= ../salt-tools/bin/saltify
 
 # Target a specific PACKAGE by name.
 # Find the package FORMULA file and check.
@@ -18,6 +21,16 @@ clean:
 	@[ -e "$(PACKAGE_FORMULA)" ] || \
 		(echo "Could not find package '$(PACKAGE)'!" && exit 1)
 	rm -f out/$(PACKAGE)*
+
+kitchen:
+	@[ -e "$(PACKAGE_FORMULA)" ] || \
+		(echo "Could not find package '$(PACKAGE)'!" && exit 1)
+	@[ -e "$(PACKAGE_DIR)/.kitchen.yml" ] || \
+		(echo "Package '$(PACKAGE)' does not have tests!" && exit 1)
+	(. $(SALTIFY_PATH); cd "$(PACKAGE_DIR)"; kitchen $(ACTION))
+
+test:
+	$(MAKE) kitchen ACTION=test PACKAGE=$(PACKAGE)
 
 
 # Target ALL packages.

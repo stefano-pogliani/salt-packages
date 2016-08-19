@@ -1,7 +1,6 @@
 SaltStack Packages
 ==================
 A set of packages to run my personal SaltStack deployment.
-
 Based on salt packages, automated through `make` and my `salt-tools`.
 
 
@@ -11,7 +10,6 @@ Build a package
 make build PACKAGE=<NAME>
 ll out/<NAME>*
 ```
-
 
 ### Community packages without FORMULA file
 ???
@@ -33,4 +31,7 @@ Support for GPG encoded data is hacked in by adding this to `.kithen.yml`:
     ../../../../etc/salt/gpgkeys/trustdb.gpg: test/integration/gpgkeys/trustdb.gpg
 ```
 
-See `packages/sp/formula/essential` for example.
+See `packages/sp/formula/essential` for example kitchen configuration.
+Use `make test PACKAGE=...` or `make kitchen PACKAGE=... ACTION=...`
+as shorthands for activating the kitchen environment and running commands
+from the correct directory.

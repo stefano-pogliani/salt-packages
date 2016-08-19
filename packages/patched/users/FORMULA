@@ -1,0 +1,11 @@
+name: users
+version: 201608
+release: 1
+
+os: Fedora, Debian
+os_family: RedHat, Debian
+
+top_level_dir: users/
+
+summary: Configure users via pillar.
+description: Configure users via pillar.

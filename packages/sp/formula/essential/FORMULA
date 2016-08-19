@@ -1,0 +1,14 @@
+name: sp-essential
+version: 201608
+release: 1
+
+os: Fedora, Debian
+os_family: RedHat, Debian
+
+dependencies: users
+top_level_dir: sp/
+
+summary: Wrapper formula for essential configuration.
+description: >
+  Package for wrapping essential formulas that are needed on all servers.
+  This includes things like SSH configuration and user/group management.
