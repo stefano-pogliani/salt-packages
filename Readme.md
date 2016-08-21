@@ -12,7 +12,12 @@ ll out/<NAME>*
 ```
 
 ### Community packages without FORMULA file
-???
+There are (at least) two options here:
+
+  1. Fork the formula, add the `FORMULA` file, open a PR with the community.
+  2. Create a `FORMULA` in `packages/patched/<PACKAGE>` and symlink needed files.
+
+The second option is a lot faster but much less desirable for many other reasons.
 
 
 Running tests
