@@ -1,0 +1,26 @@
+---
+provisioner:
+  name: salt_solo
+  salt_bootstrap_options: '-M -X stable 2016.3'
+  salt_pillar_root: '/srv/salt/sp/pillar/'
+
+  formula: sp
+  state_top:
+    base:
+      '*':
+        - sp.spm.repo
+
+  dependencies:
+    - name: sp/nginx
+      path: "../nginx"
+
+
+platforms:
+  - name: debian-8
+
+
+suites:
+  - name: docker
+    driver:
+      name: docker
+      use_sudo: true

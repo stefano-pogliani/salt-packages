@@ -1,0 +1,23 @@
+sp:
+  nginx:
+
+    # Platform dependent options.
+    lookup:
+      # Name of the package for a default_pkg install.
+      package: nginx-full
+
+      # User and group to run nginx as.
+      user:  nginx
+      group: nginx
+
+
+    # Select the install method by setting `install_from` to one of:
+    #  - distro_pkg: install package from the distro repos.
+    #  - official_pkg: install package form the offical repo.
+    install_from: official_pkg
+
+    # Version of the package to install (default is latest).
+    pkg_version: ~
+
+    # Keep default nginx sites if present.
+    keep_default: False

@@ -1,0 +1,24 @@
+{# Lookup defaults based on OS family #}
+{% set debian_default = {
+  'package': 'nginx-full',
+  'user':  'nginx',
+  'group': 'nginx'
+} %}
+
+
+{# Merged lookup map #}
+{% set platform_default = salt['grains.filter_by']({
+  'Debian': debian_default
+}, grain='os_family') %}
+
+
+{# Export the final config object #}
+{% set sp_nginx = salt['pillar.get']('powerdns', {
+  'lookup': platform_default,
+
+  'install_from': 'official_pkg',
+  'pkg_version': None,
+  'keep_default': False,
+
+  'conf_path': '/etc/nginx/conf.d'
+}, merge=True) %}

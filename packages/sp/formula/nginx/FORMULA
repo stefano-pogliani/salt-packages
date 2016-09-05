@@ -1,0 +1,14 @@
+name: sp-nginx
+version: 201608
+release: 1
+
+os: Debian
+os_family: Debian
+
+top_level_dir: sp/
+
+summary: Configure an NGINX instance.
+description: >
+  Installs and setup an NGINX instance on the host.
+  Also provides the nginx_vhost state module to manipulate
+  NGINX virual hosts.
