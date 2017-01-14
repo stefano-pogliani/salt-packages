@@ -12,7 +12,7 @@ sp-spm-dir:
     - user:  "{{ sp_nginx.lookup.user }}"
     - mode:  755
     - makedirs: True
-    
+
 sp-spm-repo-dir:
   file.directory:
     - name: /data/www/spm/repo

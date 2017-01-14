@@ -1,5 +1,5 @@
-name: users
-version: 201608
+name: patched-users
+version: 201701
 release: 1
 
 os: Fedora, Debian

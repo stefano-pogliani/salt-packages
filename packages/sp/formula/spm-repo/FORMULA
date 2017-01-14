@@ -1,11 +1,11 @@
 name: sp-spm-repo
-version: 201608
+version: 201701
 release: 1
 
 os: Debian
 os_family: Debian
 
-dependencies: nginx
+dependencies: sp-nginx
 top_level_dir: sp/
 
 summary: Configure an NGINX instance to run an SPM repo.

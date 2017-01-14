@@ -1,3 +1,6 @@
 [submodule "packages/community/users"]
-	path = packages/community/users
+	path = packages/patched/users/users
 	url = https://github.com/saltstack-formulas/users-formula.git
+[submodule "packages/community/redis"]
+	path = packages/patched/redis/redis
+	url = https://github.com/saltstack-formulas/redis-formula.git

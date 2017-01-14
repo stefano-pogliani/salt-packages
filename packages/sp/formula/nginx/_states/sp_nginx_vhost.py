@@ -30,7 +30,7 @@ def absent(name=None, **kwargs):
     file_result = __states__['file.absent'](**args)
 
     for attr in ('result', 'changes', 'comment'):
-        result[attr]  = file_result[attr]
+        result[attr] = file_result[attr]
     return result
 
 def present(name=None, **kwargs):
@@ -40,8 +40,8 @@ def present(name=None, **kwargs):
     args = {}
     args.update(kwargs)
     args['name']  = _vhost_name(name)
-    args['user']  = _lookup_arg('user', kwargs, 'nginx')
-    args['group'] = _lookup_arg('group', kwargs, 'nginx')
+    args['user']  = _lookup_arg('user', kwargs, 'www-data')
+    args['group'] = _lookup_arg('group', kwargs, 'www-data')
     args['mode']  = _lookup_arg('mode', kwargs, 644)
 
     __states__ = loader.states(__opts__, __salt__, None, None)

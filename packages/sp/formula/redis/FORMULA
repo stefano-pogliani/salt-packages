@@ -1,0 +1,12 @@
+name: sp-redis
+version: 201611
+release: 1
+
+os: Debian
+os_family: Debian
+
+dependencies: redis, sp-apt
+top_level_dir: sp/
+
+summary: Wrapper formula for redis server configuration.
+description: Wrapper formula for redis server configuration.

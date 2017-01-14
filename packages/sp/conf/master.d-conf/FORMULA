@@ -1,5 +1,5 @@
 name: sp-master-conf
-version: 201608
+version: 201701
 release: 1
 
 os: Fedora, Debian

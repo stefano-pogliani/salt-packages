@@ -1,0 +1,11 @@
+name: patched-redis
+version: 201701
+release: 1
+
+os: Fedora, Debian
+os_family: RedHat, Debian
+
+top_level_dir: redis/
+
+summary: Install and configure redis server.
+description: Install and configure redis server.

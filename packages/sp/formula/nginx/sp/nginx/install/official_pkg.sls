@@ -2,7 +2,7 @@
 # nginx from it.
 {% from "sp/nginx/map.jinja" import sp_nginx with context %}
 
-{% if grains['os'] == 'Debian' %}
+{% if grains['os_family'] == 'Debian' %}
 sp-nginx-aptutils:
   pkg.installed:
     - name: apt-utils
@@ -10,7 +10,7 @@ sp-nginx-aptutils:
 sp-nginx-repo:
   pkgrepo.managed:
     - humanname: nginx
-    - name: "deb http://nginx.org/packages/{{ grains['os'].lower() }}/ {{ grains['oscodename'] }} nginx"
+    - name: "deb http://nginx.org/packages/{{ grains['os_family'].lower() }}/ {{ grains['oscodename'] }} nginx"
     - file: "/etc/apt/sources.list.d/nginx-official.list"
     - keyid: ABF5BD827BD9BF62
     - keyserver: keyserver.ubuntu.com

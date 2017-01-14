@@ -1,0 +1,27 @@
+---
+provisioner:
+  name: salt_solo
+  salt_bootstrap_options: '-M -X stable 2016.3'
+  salt_pillar_root: '/srv/salt/sp/pillar/'
+
+  formula: sp
+  state_top:
+    base:
+      '*':
+        - sp.apt.hidden_testing
+        - test.state.fixtures.packages_from
+
+  dependencies:
+    - name: test/state/fixtures
+      path: "."
+
+
+platforms:
+  - name: debian-8
+
+
+suites:
+  - name: docker
+    driver:
+      name: docker
+      use_sudo: true

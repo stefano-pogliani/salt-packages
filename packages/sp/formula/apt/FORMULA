@@ -1,0 +1,15 @@
+name: sp-apt
+version: 201611
+release: 1
+
+os: Debian
+os_family: Debian
+
+top_level_dir: sp/
+
+summary: Helper states/functions for apt-get and deb packages.
+description: >
+  Deals with common configuration changes relating to apt:
+
+    * Adding the testing repo without fething packages by default.
+    * Pinning packages so that they are fetched form a specific release.

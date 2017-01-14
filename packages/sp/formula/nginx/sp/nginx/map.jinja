@@ -1,8 +1,8 @@
 {# Lookup defaults based on OS family #}
 {% set debian_default = {
   'package': 'nginx-full',
-  'user':  'nginx',
-  'group': 'nginx'
+  'user':  'www-data',
+  'group': 'www-data'
 } %}
 
 
@@ -13,10 +13,10 @@
 
 
 {# Export the final config object #}
-{% set sp_nginx = salt['pillar.get']('powerdns', {
+{% set sp_nginx = salt['pillar.get']('nginx', {
   'lookup': platform_default,
 
-  'install_from': 'official_pkg',
+  'install_from': 'distro_pkg',
   'pkg_version': None,
   'keep_default': False,
 

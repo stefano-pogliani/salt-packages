@@ -1,10 +1,11 @@
 name: sp-glue
-version: 201608
+version: 201701
 release: 1
 
 os: Fedora, Debian
 os_family: RedHat, Debian
 
+dependencies: sp-essential, sp-redis, sp-spm-repo
 top_level_dir: sp/
 
 summary: Glue states and pillar files.
