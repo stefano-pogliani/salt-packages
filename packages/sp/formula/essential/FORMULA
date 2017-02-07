@@ -1,5 +1,5 @@
 name: sp-essential
-version: 201701
+version: 201702
 release: 1
 
 os: Fedora, Debian

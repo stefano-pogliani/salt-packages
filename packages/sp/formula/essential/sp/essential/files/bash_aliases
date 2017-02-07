@@ -1,0 +1,4 @@
+# *** Managed by salt, do not edit! *** #
+# Bash aliases file.
+
+alias ll="ls -lah --group-directories-first"
