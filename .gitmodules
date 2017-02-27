@@ -4,3 +4,9 @@
 [submodule "packages/community/redis"]
 	path = packages/patched/redis/redis
 	url = https://github.com/saltstack-formulas/redis-formula.git
+[submodule "packages/patched/powerdns/powerdns"]
+	path = packages/patched/powerdns/powerdns
+	url = https://github.com/saltstack-formulas/powerdns-formula.git
+[submodule "packages/salt-private"]
+	path = packages/salt-private
+	url = /home/stefano/devel/config/salt/salt-private

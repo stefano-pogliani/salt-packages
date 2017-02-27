@@ -1,0 +1,19 @@
+{% set default = {
+  'server': {
+    'arch': 'linux-armv7',
+    'version': '1.5.2',
+    'sha256': '43f45cf782f912ef8d892d5c86e67dbd90b71b11ac4badae3280eb166ab4f8ca'
+  },
+
+  'node_exporter': {
+    'arch': 'linux-armv7',
+    'version': '0.13.0',
+    'sha256': '24b99d6cfa2386ae48d9a7ec28f64cf1cd153f4ce7a4b32be7983e6279e9c250'
+  }
+} %}
+
+
+{% set prometheus = salt['grains.filter_by'](
+  {'default': default},
+  merge=salt['pillar.get']('sp:prometheus')
+) %}

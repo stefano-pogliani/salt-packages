@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+
+  external_labels:
+    monitor: lon01-lef0
+
+
+scrape_configs:
+  - job_name: prometheus
+    metrics_path: '/metrics'
+    static_configs:
+      - targets:
+        - 'lon01-lef0:9090'
+
+  - job_name: node-info
+    metrics_path: '/metrics'
+    static_configs:
+      - targets:
+        - 'lon01-lef0:9100'
+        - 'lon01-lef1:9100'
+        - 'lon01-cam01:9100'

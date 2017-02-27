@@ -1,6 +1,6 @@
 name: sp-master-conf
-version: 201701
-release: 1
+version: 201702
+release: 2
 
 os: Fedora, Debian
 os_family: RedHat, Debian

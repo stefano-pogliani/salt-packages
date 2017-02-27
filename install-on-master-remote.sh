@@ -33,9 +33,15 @@ ${SUDO} spm install --assume-yes --force --verbose sp-spm-repo-conf
 ${SUDO} spm install --assume-yes --force --verbose patched-redis
 ${SUDO} spm install --assume-yes --force --verbose patched-users
 
+${SUDO} spm install --assume-yes --force --verbose sp-app-grafana
+${SUDO} spm install --assume-yes --force --verbose sp-app-prometheus
+
 ${SUDO} spm install --assume-yes --force --verbose sp-apt
 ${SUDO} spm install --assume-yes --force --verbose sp-essential
 ${SUDO} spm install --assume-yes --force --verbose sp-glue
 ${SUDO} spm install --assume-yes --force --verbose sp-nginx
+${SUDO} spm install --assume-yes --force --verbose sp-powerdns
 ${SUDO} spm install --assume-yes --force --verbose sp-redis
+${SUDO} spm install --assume-yes --force --verbose sp-secrets
 ${SUDO} spm install --assume-yes --force --verbose sp-spm-repo
+${SUDO} spm install --assume-yes --force --verbose sp-storage

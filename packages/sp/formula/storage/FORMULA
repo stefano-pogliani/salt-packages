@@ -1,0 +1,11 @@
+name: sp-storage
+version: 201702
+release: 1
+
+os: Debian
+os_family: Debian
+
+top_level_dir: sp/
+
+summary: Storage managment and configuration states.
+description: Storage managment and configuration states.
